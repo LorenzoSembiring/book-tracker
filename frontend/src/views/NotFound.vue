@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex text-center place-items-center">
+  <div class="h-screen flex text-center place-items-center justify-center">
     <div class="">
       <div class="font-bold text-4xl text-cyan-500">404</div>
       <div class="pt-2 text-lg font-semibold text-cyan-800">
