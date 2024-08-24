@@ -12,10 +12,10 @@
               Book Journey
             </div>
             <div class="p-5 text-xl text-white plus-jakarta-sans">
-              Hit every milestone in your reading journey—never lose your page again!
+              Hit every milestone in your reading journey—never lose your page
+              again!
             </div>
-          </div>
-          <div class="w-full md:w-1/2">
+            <div class="w-full lg:w-1/2">
             <div class="flex flex-wrap p-5">
               <div class="w-1/2">
                 <button
@@ -40,6 +40,12 @@
           </div>
           
         </div>
+      </div>
+    </div>
+    <div class="bg-gray-100 mt-10 py-4">
+      <div class="px-4 text-slate-600 plus-jakarta-sans">
+        <p class="text-center text-xl font-bold mb-2">We get it—losing track of your reading is <strong class="text-cyan-500">frustrating.</strong></p>
+        <p class="text-center px-10">That's why we keep you on point, so you can dive back in without missing a beat.</p>
       </div>
     </div>
   </div>
@@ -68,6 +74,12 @@ function goToLogin() {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
+  font-style: normal;
+}
+.plus-jakarta-sans-bold {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
 }
 .hero {
