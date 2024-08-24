@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-20 bg-cyan-50 h-screen sm:px-0 sm:max-w-full">
+  <div class="container py-20 bg-cyan-50 h-dvh sm:px-0 sm:max-w-full">
     <div class="">
       <div class="flex content-center justify-center">
         <div class="border rounded bg-white items-center px-4 sm:px-16 sm:py-3">
@@ -16,16 +16,16 @@
           </div>
           <div class="m-4">
             <div class="p-3 border rounded-md m-3">
-              <div><input type="text" size="20" placeholder="Username"/></div>
+              <div><input class="w-50 sm:w-80" type="text" placeholder="Username"/></div>
             </div>
             <div class="p-3 border rounded-md m-3">
-              <div><input type="text" size="20" placeholder="Email"/></div>
+              <div><input class="w-50 sm:w-80" type="text" placeholder="Email"/></div>
             </div>
             <div class="p-3 border rounded-md m-3">
-              <div><input type="password" size="17" placeholder="Password"/></div>
+              <div><input class="w-50 sm:w-80" type="password" placeholder="Password"/></div>
             </div>
             <div class="p-3 border rounded-md m-3">
-              <div><input type="password" size="17" placeholder="Confirm Password"/></div>
+              <div><input class="w-50 sm:w-80" type="password" placeholder="Confirm Password"/></div>
             </div>
           </div>
           <div class="flex justify-center pb-5">
@@ -33,11 +33,11 @@
               Sign Up
             </button>
           </div>
-          <div class="flex flex-col items-center pb-5">
+          <div class="flex flex-col items-center">
             <div class="text-gray-500 font-medium">
               Or continue with
             </div>
-            <button class="bg-gray-200 rounded p-3 inline-block">
+            <button class="bg-gray-200 rounded m-3 p-3 inline-block">
               <Icon class="text-gray-600" icon="ri:google-fill"/>
             </button>
           </div>
