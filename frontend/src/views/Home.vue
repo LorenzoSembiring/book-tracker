@@ -1,12 +1,10 @@
 <template>
-  <div class="container bg-cyan-400 px-4 sm:px-0 sm:max-w-full">
-    <div class="hero pt-10">
+  <div class="container sm:px-0 sm:max-w-full">
+    <div class="hero px-4 bg-cyan-400/50 pt-10">
       <div>
         <!-- left -->
         <div class="flex flex-wrap pb-10">
-          <div>
-            
-          </div>
+          <div></div>
           <div class="w-full md:w-1/2">
             <div
               class="text-white text-3xl md:text-4xl px-5 pt-5 libre-baskerville-bold"
@@ -71,5 +69,10 @@ function goToLogin() {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+}
+.hero {
+  background-color: aqua;
+  background-image: url("hero.png");
+  opacity: 100%;
 }
 </style>
