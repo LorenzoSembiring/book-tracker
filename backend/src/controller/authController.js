@@ -11,7 +11,14 @@ class authController{
         try {
             const register = await authService.register(username, email, password, "user");
             
-            res.status(200).json({
+            if (typeof register == String) {
+                res.status(409).json({
+                    code: 409,
+                    status: "conflict",
+                    message: register
+                })
+            }
+            res.status(201).json({
                 code: 201,
                 status: "created",
                 data: register
