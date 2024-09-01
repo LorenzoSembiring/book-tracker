@@ -5,8 +5,8 @@ class User{
     static async getAll(){
         return db.select().table('users');
     }
-    static async insert(email, username, password){
-        return await db('users').insert({email: email, username: username, password: password});
+    static async insert(email, username, password, role){
+        return await db('users').insert({email: email, username: username, password: password, role: role});
     }
     static async select({ email, username, id }) {
         const query = db('users');

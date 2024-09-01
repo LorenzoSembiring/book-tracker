@@ -9,7 +9,7 @@ class authController{
         const password = req.body.password
 
         try {
-            const register = await authService.register(username, email, password);
+            const register = await authService.register(username, email, password, "user");
             
             res.status(200).json({
                 code: 201,
