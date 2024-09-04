@@ -17,7 +17,7 @@ class authService {
         }
 
         const created = await User.insert(email, username, hashedPassword, role);
-        return User.select({id: created[0]})
+        return {status: "created", data: await User.select({id: created[0]})}
     }
 }
 
