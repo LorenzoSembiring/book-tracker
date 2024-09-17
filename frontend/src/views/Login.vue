@@ -22,7 +22,7 @@
                     class="text-2xl text-gray-400"
                     icon="mdi:email-outline"
                 /></span>
-                <input class="w-50 sm:w-80" type="text" placeholder="Email" />
+                <input class="w-50 sm:w-80" v-model="email" type="text" placeholder="Email" />
               </div>
             </div>
             <div class="p-3 border rounded-md m-3">
@@ -32,6 +32,7 @@
                 /></span>
                 <input
                   class="w-50 sm:w-80"
+                  v-model="password"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   placeholder="Password"
                 />
@@ -69,8 +70,27 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 import { ref } from "vue";
+import router from "../router/index.js";
+import axios from "axios";
 
 const isPasswordVisible = ref(false);
+const email = ref("");
+const password = ref("");
+
+async function login() {
+  try {
+    const formData = new FormData();
+    formData.append("email", email.value);
+    formData.append("password", password.value);
+
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/auth/login`,
+      formData,
+    );
+
+    if(response.status == 200) {
+      router.push("/dashboard");
+    }
 
 function setPasswordVisibility() {
   if (isPasswordVisible) {
