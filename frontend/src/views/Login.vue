@@ -97,8 +97,11 @@ function setPasswordVisibility() {
     isPasswordVisible = false;
   } else {
     isPasswordVisible = true;
+  } catch (error) {
+    console.error("Error updating category:", error);
   }
 }
+
 </script>
 <style scoped>
 .libre-baskerville-bold {
