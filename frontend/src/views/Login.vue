@@ -2,7 +2,7 @@
   <div class="container py-20 bg-cyan-50 h-dvh sm:px-0 sm:max-w-full">
     <div class="">
       <div class="flex content-center justify-center">
-        <div class="border rounded bg-white items-center px-4 sm:px-16 sm:py-3">
+        <div class="border rounded bg-white items-center px-2 sm:px-16 sm:py-3">
           <div class="flex justify-center flex-col items-center">
             <div class="font-bold text-cyan-900 text-2xl pt-5">Sign In</div>
             <div class="text-black">
@@ -14,7 +14,7 @@
               </div>
             </div>
           </div>
-          <div class="m-4">
+          <div class="">
             <div class="p-3 border rounded-md m-3">
               <div class="flex">
                 <span class="me-2"
@@ -51,9 +51,10 @@
           </div>
           <div class="flex justify-center pb-5">
             <button
+            @click="login"
               class="border rounded-md px-4 py-2 bg-cyan-500 text-white font-bold"
             >
-              Sign Up
+              Sign In
             </button>
           </div>
           <div class="flex flex-col items-center">
@@ -92,11 +93,6 @@ async function login() {
       router.push("/dashboard");
     }
 
-function setPasswordVisibility() {
-  if (isPasswordVisible) {
-    isPasswordVisible = false;
-  } else {
-    isPasswordVisible = true;
   } catch (error) {
     console.error("Error updating category:", error);
   }
@@ -112,5 +108,14 @@ function setPasswordVisibility() {
 textarea:focus,
 input:focus {
   outline: none;
+}
+input {
+  font-family: "Plus Jakarta Sans", sans-serif; 
+  font-weight: 500;
+  color: rgb(71 85 105);
+}
+
+input::placeholder {
+  font-weight: 400;
 }
 </style>
