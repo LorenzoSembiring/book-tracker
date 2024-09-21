@@ -22,7 +22,12 @@
                     class="text-2xl text-gray-400"
                     icon="mdi:email-outline"
                 /></span>
-                <input class="w-50 sm:w-80" v-model="email" type="text" placeholder="Email" />
+                <input
+                  class="w-50 sm:w-80"
+                  v-model="email"
+                  type="text"
+                  placeholder="Email"
+                />
               </div>
             </div>
             <div class="p-3 border rounded-md m-3">
@@ -49,9 +54,13 @@
               </div>
             </div>
           </div>
+          <div v-if="errorValue" class="flex justify-center p-3">
+            <div class="px-6 py-4 sm:px-20 border bg-red-50 border-red-400 text-red-400 font-semibold rounded">{{ errorValue }}</div>
+          </div>
+          <div>{{ text }}</div>
           <div class="flex justify-center pb-5">
             <button
-            @click="login"
+              @click="login"
               class="border rounded-md px-4 py-2 bg-cyan-500 text-white font-bold"
             >
               Sign In
@@ -74,6 +83,7 @@ import { ref } from "vue";
 import router from "../router/index.js";
 import axios from "axios";
 
+const errorValue = ref(null);
 const isPasswordVisible = ref(false);
 const email = ref("");
 const password = ref("");
@@ -86,18 +96,20 @@ async function login() {
 
     const response = await axios.post(
       `${import.meta.env.VITE_API_URL}/auth/login`,
-      formData,
+      formData
     );
-
-    if(response.status == 200) {
+    if (response.status == 200) {
       router.push("/dashboard");
     }
-
   } catch (error) {
-    console.error("Error updating category:", error);
+    if (error.response.data.code == 401) {
+      errorValue.value = "Email atau password salah";
+    } else if (error.response.data.code == 500) {
+      errorValue.value = "Ada kesalahan sistem, coba lagi nanti";
+    }
+    console.error("Error :", error);
   }
 }
-
 </script>
 <style scoped>
 .libre-baskerville-bold {
@@ -110,7 +122,7 @@ input:focus {
   outline: none;
 }
 input {
-  font-family: "Plus Jakarta Sans", sans-serif; 
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
   color: rgb(71 85 105);
 }
