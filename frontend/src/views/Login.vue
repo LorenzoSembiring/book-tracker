@@ -27,6 +27,7 @@
                   v-model="email"
                   type="text"
                   placeholder="Email"
+                  @keydown.enter.exact.prevent="login()"
                 />
               </div>
             </div>
@@ -40,6 +41,7 @@
                   v-model="password"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   placeholder="Password"
+                  @keydown.enter.exact.prevent="login()"
                 />
                 <span @click="isPasswordVisible = !isPasswordVisible">
                   <Icon
