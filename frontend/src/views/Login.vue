@@ -105,9 +105,9 @@ async function login() {
     }
   } catch (error) {
     if (error.response.data.code == 401) {
-      errorValue.value = "Email atau password salah";
+      errorValue.value = "Wrong email or password";
     } else if (error.response.data.code == 500) {
-      errorValue.value = "Ada kesalahan sistem, coba lagi nanti";
+      errorValue.value = "There was a system error, please try again later";
     }
     console.error("Error :", error);
   }
