@@ -1,6 +1,6 @@
 <template>
   <div class="container sm:px-0 sm:max-w-full">
-    <div class="hero px-4 bg-cyan-400/50 pt-10">
+    <div class="custom-hero px-4 bg-cyan-400/50 pt-10">
       <div>
         <!-- left -->
         <div class="flex flex-wrap pb-10">
@@ -82,7 +82,7 @@ function goToLogin() {
   font-weight: 500;
   font-style: normal;
 }
-.hero {
+.custom-hero {
   background-color: aqua;
   background-image: url("hero.png");
   opacity: 100%;
