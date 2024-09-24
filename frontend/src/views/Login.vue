@@ -57,9 +57,12 @@
             </div>
           </div>
           <div v-if="errorValue" class="flex justify-center p-3">
-            <div class="px-6 py-4 sm:px-20 border bg-red-50 border-red-400 text-red-400 font-semibold rounded">{{ errorValue }}</div>
+            <div
+              class="text-center max-w-xs sm:max-w-sm px-6 py-4 sm:px-20 border bg-red-50 border-red-400 text-red-400 font-semibold rounded"
+            >
+              {{ errorValue }}
+            </div>
           </div>
-          <div>{{ text }}</div>
           <div class="flex justify-center pb-5">
             <button
               @click="login"
