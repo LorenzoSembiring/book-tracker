@@ -1,9 +1,8 @@
 const AuthService = require('../service/authService')
-
 const authService = new AuthService();
 
 class authController{
-    register = async(req, res, next) => {
+    register = async(req, res) => {
         const username = req.body.username
         const email = req.body.email
         const password = req.body.password
@@ -32,7 +31,7 @@ class authController{
             
         }
     }
-    login = async(req, res, next) => {
+    login = async(req, res) => {
         const email = req.body.email
         const password = req.body.password
         try {
